@@ -1,0 +1,59 @@
+:root {
+    --txGrayBlack: #111111;
+    --txBlackLight: #333333;
+    --txGray: #777777;
+    --txOrange: #f18f48;
+    --txGreen: #257F65;
+    --txWhite: #fff;
+
+    --bgGeen: #257F63;
+    --bgWhite: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/* ====================== INICIO HEADER ======================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 16%;
+    padding-top: 10px;
+    align-items: center;
+    background: var(--bgWhite);
+    border-bottom: var(--txOrange) 6px solid;
+}
+
+header .nav-bar ul {
+    display: flex;
+    gap: 26px;
+}
+
+header .nav-bar ul li a{
+    color: var(--txOrange);
+    position: relative;
+    padding: 7px 17px;
+    border-radius: 6px;
+}
+
+#botao-ativo {
+    background: var(--bgGeen);
+    color: var(--txWhite);
+}
+
+header .nav-bar ul li a:hover {
+    color: var(--txWhite);
+    background: var(--bgGeen);
+}
+
+header .carrinho-compras {
+    cursor: pointer;
+}
+/* ========================== FIM HEADER ======================= */
