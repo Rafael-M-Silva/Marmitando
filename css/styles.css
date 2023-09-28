@@ -57,3 +57,79 @@ header .carrinho-compras {
     cursor: pointer;
 }
 /* ========================== FIM HEADER ======================= */
+
+
+.nosso-cardapio {
+    background: url(../image/background.png), var(--bgGeen);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nosso-cardapio .titulo {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    color: var(--txWhite);
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.nosso-cardapio .titulo h1 {
+    font-size: 36px;
+    font-weight: 700;
+    position: relative;
+}
+
+.nosso-cardapio .titulo h1::after, .nosso-cardapio .titulo h1::before {
+    content: '';
+    width: 139px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.70);
+    position: absolute;
+    top: 25px;
+}
+
+.nosso-cardapio .titulo h1::after {
+    right: -170px;
+}
+
+.nosso-cardapio .titulo h1::before {
+    left: -170px;
+}
+
+.imagem-marmitando img {
+    width: 350px;
+}
+
+.nosso-cardapio .conteudo {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16%;
+}
+
+.nosso-cardapio .conteudo .cardapio-opcao {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.nosso-cardapio .conteudo .cardapio-opcao .opcao h2 {
+    width: 187px;
+    text-align: center;
+    background: var(--txOrange);
+    color: var(--txWhite);
+    border-radius: 4px;
+}
+
+.nosso-cardapio .conteudo .cardapio-opcao .opcao ul {
+    color: var(--txWhite);
+    padding-left: 15px;
+}
+
+.nosso-cardapio .conteudo .cardapio-opcao .opcao ul li {
+    list-style: disc;
+}
