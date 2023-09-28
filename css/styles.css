@@ -120,7 +120,9 @@ header .carrinho-compras {
 .nosso-cardapio .conteudo .cardapio-opcao .opcao h2 {
     width: 187px;
     text-align: center;
-    background: var(--txOrange);
+    /* background: var(--txOrange); */
+    background-image: url(/image/opcoesfundo.png);
+    background-repeat: no-repeat;
     color: var(--txWhite);
     border-radius: 4px;
 }
