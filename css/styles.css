@@ -17,6 +17,7 @@
     font-family: 'Poppins', sans-serif;
     list-style: none;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 
@@ -59,14 +60,15 @@ header .carrinho-compras {
 /* ========================== FIM HEADER ======================= */
 
 
-.nosso-cardapio {
+section {
     background: url(../image/background.png), var(--bgGeen);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-bottom: 50px;
 }
 
-.nosso-cardapio .titulo {
+section .titulo {
     padding-top: 50px;
     display: flex;
     flex-direction: column;
@@ -78,13 +80,13 @@ header .carrinho-compras {
     margin-bottom: 50px;
 }
 
-.nosso-cardapio .titulo h1 {
+section .titulo h1 {
     font-size: 36px;
     font-weight: 700;
     position: relative;
 }
 
-.nosso-cardapio .titulo h1::after, .nosso-cardapio .titulo h1::before {
+section .titulo h1::after, section .titulo h1::before {
     content: '';
     width: 139px;
     height: 1px;
@@ -93,11 +95,11 @@ header .carrinho-compras {
     top: 25px;
 }
 
-.nosso-cardapio .titulo h1::after {
+section .titulo h1::after {
     right: -170px;
 }
 
-.nosso-cardapio .titulo h1::before {
+section .titulo h1::before {
     left: -170px;
 }
 
@@ -105,7 +107,7 @@ header .carrinho-compras {
     width: 350px;
 }
 
-.nosso-cardapio .conteudo {
+section .conteudo {
     display: flex;
     justify-content: space-between;
     padding: 10px 16%;
@@ -135,4 +137,104 @@ header .carrinho-compras {
 
 .nosso-cardapio .conteudo .cardapio-opcao .opcao ul li {
     list-style: disc;
+}
+
+
+
+/* =============== INICIO Section kit-marmitas ==================== */
+
+.kit-marmitas {
+    background: url(../image/bg-1.png), var(--bgWhite);
+}
+
+.kit-marmitas .titulo {
+    color: var(--txOrange);
+}
+
+.kit-marmitas .titulo p{
+    color: var(--txGray);
+}
+
+.kit-marmitas .titulo h1::after, .kit-marmitas .titulo h1::before {
+    background: rgba(241, 143, 72, 0.50);
+}
+
+.kit-marmitas .conteudo {
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.kit-marmitas .conteudo .produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border-radius: 20px;
+    margin: 15px 10px;
+    padding-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--bgWhite);
+    overflow: hidden;
+}
+
+.kit-marmitas .conteudo .produto div {
+    overflow: hidden;
+}
+
+.kit-marmitas .conteudo .produto img{
+    width: 236.02px;
+    height: 250px;
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+    transition: .5s ease-in-out;
+    
+}
+
+.kit-marmitas .conteudo .produto:hover img {
+    transform: scale(1.2);
+}
+
+.kit-marmitas .conteudo .produto span {
+    color: rgba(119, 119, 119, 0.70);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.kit-marmitas .conteudo .produto h3 {
+    width: 229px;
+    text-align: center;
+    color: var(--txGreen);
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 54px;
+}
+
+.kit-marmitas .conteudo .produto .especial-mes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 128px;
+    color: var(--txOrange);
+    height: 250px;
+}
+.kit-marmitas .conteudo .produto .preco-botao-comprar {
+    color: var(--txGrayBlack);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.kit-marmitas .conteudo .produto .preco-botao-comprar .botao-comprar {
+    display: flex;
+    padding: 6px 19px;
+    margin-top: 6px;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: var(--txOrange);
+    border: none;
+    color: var(--txWhite);
 }
