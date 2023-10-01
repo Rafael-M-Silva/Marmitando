@@ -21,6 +21,8 @@
 }
 
 
+
+
 /* ====================== INICIO HEADER ======================= */
 header {
     display: flex;
@@ -60,6 +62,9 @@ header .carrinho-compras {
 /* ========================== FIM HEADER ======================= */
 
 
+
+
+/* ===================== INICIO SECTION GLOBAL ==================== */
 section {
     background: url(../image/background.png), var(--bgGeen);
     background-position: center;
@@ -103,14 +108,38 @@ section .titulo h1::before {
     left: -170px;
 }
 
-.imagem-marmitando img {
-    width: 350px;
-}
-
 section .conteudo {
     display: flex;
     justify-content: space-between;
     padding: 10px 16%;
+}
+
+.botao-comprar {
+    display: flex;
+    align-items: flex-start;
+    padding: 6px 19px;
+    margin-top: 6px;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 30px;
+    background: var(--txOrange);
+    color: var(--txWhite);
+    border: none;
+    opacity: .9;
+}
+
+.botao-comprar:hover {
+    opacity: 1;
+}
+/* ===================== FIM SECTION GLOBAL ==================== */
+
+
+
+
+/* ==================== INICIO SECTION NOSSO CARDAPIO ================= */
+.nosso-cardapio .conteudo .imagem-marmitando img {
+    width: 380px;
 }
 
 .nosso-cardapio .conteudo .cardapio-opcao {
@@ -138,11 +167,12 @@ section .conteudo {
 .nosso-cardapio .conteudo .cardapio-opcao .opcao ul li {
     list-style: disc;
 }
+/* ==================== FIM SECTION NOSSO CARDAPIO ================= */
 
 
 
-/* =============== INICIO Section kit-marmitas ==================== */
 
+/* =============== INICIO SECTION KIT-MARMITAS ==================== */
 .kit-marmitas {
     background: url(../image/bg-1.png), var(--bgWhite);
 }
@@ -175,6 +205,7 @@ section .conteudo {
     border: 1px solid rgba(0, 0, 0, 0.10);
     background: var(--bgWhite);
     overflow: hidden;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.10);
 }
 
 .kit-marmitas .conteudo .produto div {
@@ -211,6 +242,18 @@ section .conteudo {
     min-height: 54px;
 }
 
+.kit-marmitas .conteudo .produto .preco-botao-comprar {
+    color: var(--txGrayBlack);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+/* =============== FIM SECTION KIT-MARMITAS ==================== */
+
+
+
+
+/* ============== INICIO PRODUTO ESPECIAL DO MES ===================== */
 .kit-marmitas .conteudo .produto .especial-mes {
     display: flex;
     align-items: center;
@@ -219,22 +262,89 @@ section .conteudo {
     color: var(--txOrange);
     height: 250px;
 }
-.kit-marmitas .conteudo .produto .preco-botao-comprar {
-    color: var(--txGrayBlack);
-    text-align: center;
-    font-size: 12px;
-    font-weight: 700;
+
+.kit-marmitas .conteudo .produto:nth-child(6) .preco-botao-comprar .botao-comprar {
+    background: var(--txBlackLight);
+    opacity: .5;
+    cursor: auto;
 }
 
-.kit-marmitas .conteudo .produto .preco-botao-comprar .botao-comprar {
+.kit-marmitas .conteudo .produto:nth-child(6) .preco-botao-comprar .botao-comprar:hover {
+    opacity: .5;
+}
+/* ============== FIM PRODUTO ESPECIAL DO MES ===================== */
+
+
+
+
+/* =================== INICIO SECTION OFERTAS ==================== */
+.ofertas .conteudo {
+    flex-direction: column;
+    gap: 20px;
+}
+.ofertas .conteudo .oferta {
     display: flex;
-    padding: 6px 19px;
-    margin-top: 6px;
-    align-items: flex-start;
-    gap: 10px;
-    cursor: pointer;
-    border-radius: 30px;
-    background: var(--txOrange);
-    border: none;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: var(--bgWhite);
+}
+
+.ofertas .conteudo .oferta .imagem img {
+    width: 141.612px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.ofertas .conteudo .oferta .descricao {
+    padding-top: 8px;
+    padding-left: 13.40px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 20px;
+}
+
+.ofertas .conteudo .oferta .descricao h3 {
+    color: var(--txOrange);
+}
+
+.ofertas .conteudo .oferta .descricao p {
+    color: var(--txBlackLight);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ofertas .conteudo .oferta .descricao .desconto {
+    display: flex;
+    width: 91px;
+    height: 19px;
+    padding-top: 2px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--bgGeen);
     color: var(--txWhite);
+    font-size: 8px;
+    gap: 5px;
+}
+
+.ofertas .conteudo .oferta .descricao .hidden {
+    opacity: 0;
+}
+
+.ofertas .conteudo .oferta .preco-btn {
+    margin-top: 36px;
+    margin-right: 25px;
+    margin-left: 126px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ofertas .conteudo .oferta .preco-btn .preco-antigo {
+    color: rgba(17, 17, 17, 0.70);
+    font-size: 14px;
+    text-decoration-line: line-through;
 }
