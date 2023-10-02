@@ -248,7 +248,7 @@ section .conteudo {
 .kit-marmitas .conteudo .produto .preco-botao-comprar {
     color: var(--txGrayBlack);
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
 }
 /* =============== FIM SECTION KIT-MARMITAS ==================== */
@@ -359,6 +359,11 @@ section .conteudo {
 /* =================== INICIO SECTION COMO MONTAR ==================== */
 .como-montar .conteudo {
     display: flex;
+    gap: 20px;
+}
+
+.como-montar .conteudo .dicas {
+    width: 550px;
 }
 
 .como-montar .conteudo .dicas ul {
@@ -416,5 +421,52 @@ section .conteudo {
 .como-funciona-nossa-experiencia .conteudo .experiencia p {
     width: 254px;
     font-weight: 300;
-    height: 180px;
+}
+/* =================== FIM SECTION EXPERIENCIA ==================== */
+
+
+
+
+/* =================== INICIO SECTION SOBRE ==================== */
+.sobre .conteudo {
+    gap: 31px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sobre .conteudo .falas {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 19px;
+    color: var(--txGray);
+    display: flex;
+
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--bgWhite);
+}
+
+.sobre .conteudo .falas p {
+    width: 222px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.sobre .conteudo .falas h3 {
+    font-weight: 500;
+}
+/* ===================  FIM SECTION SOBRE ==================== */
+
+
+.btn-scroll-header a{
+    background: var(--txOrange);
+    padding: 10px;
+    border-radius: 6px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    color: var(--bgWhite);
 }
