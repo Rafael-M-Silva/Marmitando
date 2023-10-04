@@ -32,6 +32,9 @@ header {
     align-items: center;
     background: var(--bgWhite);
     border-bottom: var(--txOrange) 6px solid;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header .nav-bar ul {
@@ -59,6 +62,14 @@ header .nav-bar ul li a:hover {
 header .carrinho-compras {
     cursor: pointer;
     position: relative;
+    border-radius: 4px;
+    transition: .3s;
+    padding: 5px;
+    z-index: 2000;
+}
+
+header .carrinho-compras:hover {
+    transform: rotate(-20deg);
 }
 
 header .carrinho-compras .notificacao {
@@ -138,6 +149,7 @@ section .conteudo {
 .botao-comprar {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     padding: 6px 19px;
     margin-top: 6px;
     gap: 10px;
@@ -175,8 +187,11 @@ section .conteudo {
 
 
 /* ==================== INICIO SECTION NOSSO CARDAPIO ================= */
+.nosso-cardapio .conteudo {
+    gap: 50px;
+}
 .nosso-cardapio .conteudo .imagem-marmitando img {
-    width: 380px;
+    width: 420px;
 }
 
 .nosso-cardapio .conteudo .cardapio-opcao {
@@ -196,6 +211,19 @@ section .conteudo {
     border-radius: 4px;
 }
 
+.nosso-cardapio .conteudo .cardapio-opcao .opcao {
+    border: 1px solid transparent;
+    transition: .3s;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.nosso-cardapio .conteudo .cardapio-opcao .opcao:hover {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    transform: scale(1.2);
+}
+
 .nosso-cardapio .conteudo .cardapio-opcao .opcao ul {
     color: var(--txWhite);
     padding-left: 15px;
@@ -213,6 +241,7 @@ section .conteudo {
 .kit-marmitas .conteudo {
     flex-wrap: wrap;
     gap: 7px;
+    justify-content: center;
 }
 
 .kit-marmitas .conteudo .produto {
@@ -381,7 +410,7 @@ section .conteudo {
 }
 
 .como-montar .conteudo .dicas {
-    width: 550px;
+    padding-right: 20px;
 }
 
 .como-montar .conteudo .dicas ul {
@@ -465,6 +494,11 @@ section .conteudo {
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.10);
     background: var(--bgWhite);
+    transition: .3s;
+}
+
+.sobre .conteudo .falas:hover {
+    transform: scale(1.2);
 }
 
 .sobre .conteudo .falas p {
@@ -494,6 +528,7 @@ footer .logo {
 footer .conteudo {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 footer .conteudo .info {
@@ -531,7 +566,45 @@ footer .copy {
     color: var(--bgWhite);
 }
 
+.modal-off {
+    margin-top: 127px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: url(../image/bg-1.png), var(--bgWhite);
+}
 
+.modal-off main {
+    width: 100vw;
+    height: 68%;
+    flex: 1;
+    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+
+.modal-on {
+    display: block;
+    position: fixed;
+    top: 0;
+}
+
+.display-none {
+    display: none;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.modal-off main {
+    padding: 20px 16%;
+}
 /* WPP - VOLTAR - MODAL */
 
 
