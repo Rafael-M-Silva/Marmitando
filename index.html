@@ -384,8 +384,98 @@
     <div class="modal-off">
 
         <main>
-            <h1>Meu carrinho:</h1>
-            
+            <div class="titulo">
+                <h1>Meu carrinho</h1>
+            </div>
+
+            <div class="conteudo">
+
+                <div class="card-produto">
+                    <div class="produto">
+                        <h3>Produto</h3>
+                        <div class="descricao-produto">
+                            <div class="imagem-produto">
+                                <img src="./image/marmita-1.jpg" alt="">
+                            </div>
+                            <div class="descricao">
+                                <span class="opcao-produto">Opção 1:250g</span>
+                                <p class="descricao-produto">Frango em cubos, brócolis e purê de batata</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preco">
+                        <h3>Preço</h3>
+                        <p class="preco-produto">R$ 16,00</p>
+                    </div>
+                    <div class="quantidade">
+                        <h3>Quantidade</h3>
+                        <div class="form">
+                            <input class="altarar-quantidade-produto" type="button" value="+">
+                            <input type="number" name="quantidade" id="quantidade"value="1" min="1" disabled>
+                            <input class="altarar-quantidade-produto" type="button" value="-">
+                        </div>
+                    </div>
+                    <div class="total">
+                        <h3>Total</h3>
+                        <p class="valor-total">R$ 16,00</p>
+                    </div>
+                    <div class="lixeira">
+                        <img class="icon-lixeira" src="./assets/lixeira.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="card-produto">
+                    <div class="produto">
+                        <h3>Produto</h3>
+                        <div class="descricao-produto">
+                            <div class="imagem-produto">
+                                <img src="./image/marmita-2.jpg" alt="">
+                            </div>
+                            <div class="descricao">
+                                <span class="opcao-produto">Opção 2:250g</span>
+                                <p class="descricao-produto">Frango em cubos, brócolis e purê de batata</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preco">
+                        <h3>Preço</h3>
+                        <p class="preco-produto">R$ 16,00</p>
+                    </div>
+                    <div class="quantidade">
+                        <h3>Quantidade</h3>
+                        <div class="form">
+                            <input class="altarar-quantidade-produto" type="button" value="+">
+                            <input type="number" name="quantidade" id="quantidade"value="1" min="1" disabled>
+                            <input class="altarar-quantidade-produto" type="button" value="-">
+                        </div>
+                    </div>
+                    <div class="total">
+                        <h3>Total</h3>
+                        <p class="valor-total">R$ 16,00</p>
+                    </div>
+                    <div class="lixeira">
+                        <img class="icon-lixeira" src="./assets/lixeira.svg" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="subtotal">
+                <p>Subtotal: <span>R$ 32,00</span></p>
+            </div>
+
+            <div class="resumo">
+                <div>
+                    <h3>Resumo</h3>
+                    <div class="conteudo">
+                        <p class="valor-produtos">Valor dos produtos <span>R$ 32,00</span></p>
+                        <p class="frete">Frete <span>R$ 5,00</span></p>
+                        <p class="desconto">Desconto <span>-R$ 10,00</span></p>
+                        <p class="total-compra">Total da compra <span>R$ 27,00</span></p>
+                    </div>
+                    <input class="botao-comprar" type="button" value="Comprar">
+                </div>
+            </div>
         </main>
 
         <footer class="verde">
