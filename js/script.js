@@ -1,3 +1,10 @@
+let dadosUsuarioCep = {
+  localidade: ``,
+  bairro: ``,
+  logradouro: ``,
+  numero: ``
+}
+
 const modalOn = () => {
   const modal = document.querySelector('.modal-off')
   const navbar = document.querySelector('.nav-bar')
@@ -23,21 +30,41 @@ const buscaCep = () => {
       return res.json();
     })
     .then((data) => {
-      /* criar um objeto global e depois passar aqui para pegar os dados do cliente
-       */
+      const { localidade, bairro, logradouro } = data;
 
+      dadosUsuarioCep.localidade = localidade;
+      dadosUsuarioCep.bairro = bairro;
+      dadosUsuarioCep.logradouro = logradouro;
 
-      /* falta pegar o numero da casa */
       resumoCep.innerHTML = `
-        <p class="cidade">${data.localidade}</p>
-        <p class="bairro">${data.bairro}</p>
-        <p class="rua">${data.logradouro} <span class="numero"><input class='input-style pequeno' placeholder="Nº" type="number" id="numero"></span></p> 
+        <p class="cidade">${localidade}</p>
+        <p class="bairro">${bairro}</p>
+        <p class="rua">${logradouro} <span class="numero"><input class='input-style pequeno' placeholder="Nº" type="number" id="numero"></span></p> 
       `;
+
+      document.querySelector('#numero').addEventListener('input', pegarNumeroCasa)
     })
     .catch((error) => {
       console.error(error);
       resumoCep.innerHTML = '<h3>CEP Inválido!</h3>'
     });
+}
+
+const pegarNumeroCasa = (event) => {
+  dadosUsuarioCep.numero = event.target.value
+}
+
+const finalizarPedido = () => {
+  alert(`
+  Pedido Finalizado com Sucesso!
+  =========================================
+  Cidade: ${dadosUsuarioCep.localidade}
+  bairro: ${dadosUsuarioCep.bairro}
+  rua: ${dadosUsuarioCep.logradouro} n: ${dadosUsuarioCep.numero}
+  =========================================
+
+  Volte sempre :)
+  `)
 }
 
 
@@ -46,3 +73,6 @@ carrinhoCompra.addEventListener('click', modalOn)
 
 const botaoCep = document.querySelector('#botao-cep')
 botaoCep.addEventListener('click', buscaCep)
+
+const botaoFinalizarPedido = document.querySelector('#finalizar-pedido')
+botaoFinalizarPedido.addEventListener('click', finalizarPedido)
