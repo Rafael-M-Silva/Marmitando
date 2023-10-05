@@ -827,4 +827,30 @@ footer .copy {
     border-radius: 6px;
 }
 
+.modal-off main .resumo-cep{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.modal-off main .resumo-cep .cep .input-style {
+  width: 354px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  border-radius: 4px;
+  padding: 15px 34px;
+  font-size: 18px;
+  color: var(--txBlackLight);
+  font-weight: 400;
+  letter-spacing: 14.8px;
+}
+
+.modal-off main .resumo-cep .cep .pequeno {
+  width: 100px;
+  letter-spacing: 2px;
+  padding: 4px;
+}
+
 /* WPP - VOLTAR - MODAL */

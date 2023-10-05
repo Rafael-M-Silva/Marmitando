@@ -464,16 +464,28 @@
                 <p>Subtotal: <span>R$ 32,00</span></p>
             </div>
 
-            <div class="resumo">
-                <div>
-                    <h3>Resumo</h3>
-                    <div class="conteudo">
-                        <p class="valor-produtos">Valor dos produtos <span>R$ 32,00</span></p>
-                        <p class="frete">Frete <span>R$ 5,00</span></p>
-                        <p class="desconto">Desconto <span>-R$ 10,00</span></p>
-                        <p class="total-compra">Total da compra <span>R$ 27,00</span></p>
+            <div class="resumo-cep">
+                <div class="resumo cep">
+                    <div>
+                        <h3>CEP</h3>
+                        <input class="input-style" type="text" name="cep" id="cep">
+                        
+                        <div id="conteudo" class="conteudo"></div>
+                        <input id="botao-cep" class="botao-comprar" type="button" value="Buscar CEP">
                     </div>
-                    <input class="botao-comprar" type="button" value="Comprar">
+                </div>
+
+                <div class="resumo">
+                    <div>
+                        <h3>Resumo</h3>
+                        <div class="conteudo">
+                            <p class="valor-produtos">Valor dos produtos <span>R$ 32,00</span></p>
+                            <p class="frete">Frete <span>R$ 5,00</span></p>
+                            <p class="desconto">Desconto <span>-R$ 10,00</span></p>
+                            <p class="total-compra">Total da compra <span>R$ 27,00</span></p>
+                        </div>
+                        <input class="botao-comprar" type="button" value="Comprar">
+                    </div>
                 </div>
             </div>
         </main>
