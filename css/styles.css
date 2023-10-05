@@ -218,7 +218,7 @@ section .conteudo {
 .nosso-cardapio .conteudo .cardapio-opcao .opcao h2 {
   width: 187px;
   text-align: center;
-  background-image: url(/image/opcoesfundo.png);
+  background-image: url(../image/opcoesfundo.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
