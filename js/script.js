@@ -84,10 +84,20 @@ const atualizarValor = () => {
     const preco = precoProduto[i].innerText.replace('R$', '').replace(',','.')
     const quantidade = precoProduto[i].parentElement.parentElement.querySelector('.quantidade .form .quantidade-produto').value
   
+    
     subTotal += preco * quantidade
   }
+ 
   document.querySelector('.subtotal span').innerHTML = `R$ ${subTotal.toFixed(2).replace('.',',')}`
   document.querySelector('.valor-produtos span').innerHTML = `R$ ${subTotal.toFixed(2).replace('.',',')}`
+  
+  if(subTotal == 0) {
+    document.querySelector('.modal-off main .conteudo').innerHTML = `
+    <div class="carrinho-vazio">
+      <h1 >Carrinho Vazio!</h1>
+    </div>
+    `
+  }
 }
 atualizarValor()
 
@@ -99,13 +109,30 @@ const removerProduto = (event) => {
 
 // Incrementado + 1 e atualizando o valor
 const incrementarProduto = (event) => {
-  event.target.parentElement.querySelector('.quantidade-produto').value ++
+  let qtd = event.target.parentElement.querySelector('.quantidade-produto')
+  qtd.value++
+  
+  let valorProduto = 16
+  let total = qtd.value * valorProduto
+
+
+  qtd.parentElement.parentElement.parentElement.querySelector('.valor-total').innerHTML = `R$ ${total.toFixed(2).replace('.',',')}`
   atualizarValor()
 }
 
 // Decrementando - 1 e atualizando o valor
 const decrementoProduto = (event) => {
-  event.target.parentElement.querySelector('.quantidade-produto').value --
+  let qtd = event.target.parentElement.querySelector('.quantidade-produto')
+  qtd.value--
+  
+  let valorProduto = 16
+  let total = qtd.value * valorProduto
+
+  if(qtd.value == 0){
+    qtd.parentElement.parentElement.parentElement.remove()
+  }
+  
+  qtd.parentElement.parentElement.parentElement.querySelector('.valor-total').innerHTML = `R$ ${total.toFixed(2).replace('.',',')}`
   atualizarValor()
 }
 
