@@ -618,6 +618,7 @@ footer .copy {
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
   background: var(--bgWhite);
   margin-bottom: 20px;
+  gap: 20px;
 }
 
 .modal-off .conteudo .card-produto:nth-last-child(1){
@@ -628,6 +629,7 @@ footer .copy {
 .preco,
 .quantidade,
 .total {
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -636,6 +638,10 @@ footer .copy {
 .modal-off .conteudo h3 {
   color: var(--txBlackLight);
   font-weight: 400;
+}
+
+.modal-off .conteudo .card-produto .total {
+  width: 100px;
 }
 
 .modal-off .conteudo .card-produto .produto .descricao-produto {
@@ -657,7 +663,8 @@ footer .copy {
 }
 
 .modal-off .conteudo .card-produto .produto .descricao-produto .descricao {
-  width: 400px;
+  max-width: 350px;
+  word-wrap: break-word;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -714,7 +721,7 @@ footer .copy {
   background: rgba(119, 119, 119, 0.9);
 }
 
-.modal-off .card-produto .quantidade .form #quantidade {
+.modal-off .card-produto .quantidade .form .quantidade-produto {
   width: 50px;
   height: 20px;
   padding: 6px;
