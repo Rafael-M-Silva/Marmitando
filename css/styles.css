@@ -163,7 +163,7 @@ section .conteudo {
   padding: 10px 16%;
 }
 
-.botao-comprar {
+.botao-comprar, .botao-comprar-produto {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -179,7 +179,7 @@ section .conteudo {
   opacity: 0.9;
 }
 
-.botao-comprar:hover {
+.botao-comprar, .botao-comprar-produto:hover {
   opacity: 1;
 }
 
