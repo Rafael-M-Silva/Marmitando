@@ -853,4 +853,27 @@ footer .copy {
   padding: 4px;
 }
 
+.modal-off .carrinho-vazio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-off .carrinho-vazio img {
+  width: 68.98px;
+  height: 71px;
+}
+
+.modal-off .carrinho-vazio h1{
+  color: var(--txGreen);
+  font-weight: 600;
+  font-size: 60px;
+}
+
+.modal-off .carrinho-vazio .botao-comprar {
+  font-size: 24px;
+  padding: 8px 20px;
+}
+
 /* WPP - VOLTAR - MODAL */
