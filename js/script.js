@@ -123,7 +123,7 @@ const incrementarProduto = (event) => {
   let qtd = event.target.parentElement.querySelector('.quantidade-produto')
   qtd.value++
   
-  let valorProduto = 16
+  let valorProduto = event.target.parentElement.parentElement.parentElement.querySelector('.preco-produto').innerText.replace('R$', '').replace(',','.')
   let total = qtd.value * valorProduto
 
 
@@ -136,7 +136,8 @@ const decrementoProduto = (event) => {
   let qtd = event.target.parentElement.querySelector('.quantidade-produto')
   qtd.value--
   
-  let valorProduto = 16
+  
+  let valorProduto = event.target.parentElement.parentElement.parentElement.querySelector('.preco-produto').innerText.replace('R$', '').replace(',','.')
   let total = qtd.value * valorProduto
 
   if(qtd.value == 0){
@@ -197,7 +198,7 @@ const adicionarProdutoCarrinho = (event) => {
   </div>
   <div class="total">
     <h3>Total</h3>
-    <p class="valor-total">R$ 16,00</p>
+    <p class="valor-total">${precoProduto}</p>
   </div>
   <div class="lixeira">
     <img class="remover-produto" src="./assets/lixeira.svg" alt="">
