@@ -91,7 +91,7 @@ const atualizarValor = () => {
   document.querySelector('.subtotal span').innerHTML = `R$ ${subTotal.toFixed(2).replace('.',',')}`
   document.querySelector('.valor-produtos span').innerHTML = `R$ ${subTotal.toFixed(2).replace('.',',')}`
   
-  if(subTotal == 0) {
+   if(subTotal == 0) {
     document.querySelector('.modal-off main .conteudo').innerHTML = `
     <div class="carrinho-vazio">
     <img class="carrinho" src="./assets/carrinho.svg" alt="Carrinho de compra">
@@ -103,9 +103,14 @@ const atualizarValor = () => {
     `
     botaoContinueComprando = document.querySelector('#continue-comprando')
     botaoContinueComprando.addEventListener('click', modalOn)
+    return
+  }
+  const modalCarrinhoVazio = document.querySelector('.carrinho-vazio')
+  if (modalCarrinhoVazio) {
+    modalCarrinhoVazio.remove();
   }
 }
-atualizarValor()
+ atualizarValor()
 
 // Removendo produto e atualizando o valor
 const removerProduto = (event) => {
@@ -142,6 +147,73 @@ const decrementoProduto = (event) => {
   atualizarValor()
 }
 
+const adicionarProdutoCarrinho = (event) => {
+  const botao = event.target
+  const produtoInfo = botao.parentElement.parentElement;
+  const tituloNovoProduto = produtoInfo.querySelector(".opcao-produto").innerText;
+  const precoProduto = produtoInfo
+    .querySelector(".preco-produto")
+    .innerText
+  const imagemProduto = produtoInfo.querySelector("img").src;
+  const descricaoProduto = produtoInfo.querySelector(".descricao-produto").innerText;
+
+  const tituloProduto = document.querySelectorAll('.card-produto')
+  for(var i = 0; i < tituloProduto.length; i++) {
+    if(tituloProduto[i].querySelector('.opcao-produto').innerHTML === tituloNovoProduto) {
+      tituloProduto[i].querySelector('.quantidade-produto').value ++
+      atualizarValor()
+      return
+    }
+  }
+    
+    let novoProduto = document.createElement("div");
+    novoProduto.classList.add("card-produto");
+
+    
+  novoProduto.innerHTML = `
+    <div class="produto">
+    <h3>Produto</h3>
+    <div class="descricao-produto">
+        <div class="imagem-produto">
+            <img src="${imagemProduto}" alt="${tituloNovoProduto}">
+        </div>
+        <div class="descricao">
+            <span class="opcao-produto">${tituloNovoProduto}</span>
+            <p class="descricao-produto">${descricaoProduto}</p>
+        </div>
+    </div>
+  </div>
+  <div class="preco">
+    <h3>Preço</h3>
+    <p class="preco-produto">${precoProduto}</p>
+  </div>
+  <div class="quantidade">
+    <h3>Quantidade</h3>
+    <div class="form">
+        <input class="altarar-quantidade-produto mais" type="button" value="+">
+        <input class="quantidade-produto" type="number" name="quantidade" id="quantidade" value="1" disabled>
+        <input class="altarar-quantidade-produto menos" type="button" value="-">
+    </div>
+  </div>
+  <div class="total">
+    <h3>Total</h3>
+    <p class="valor-total">R$ 16,00</p>
+  </div>
+  <div class="lixeira">
+    <img class="remover-produto" src="./assets/lixeira.svg" alt="">
+  </div>
+  `;
+
+  let modalConteudo = document.querySelector('.modal-off main .conteudo')
+  modalConteudo.appendChild(novoProduto)
+
+  novoProduto.querySelector('.remover-produto').addEventListener('click', removerProduto)
+  novoProduto.querySelector('.menos').addEventListener('click', decrementoProduto)
+  novoProduto.querySelector('.mais').addEventListener('click', incrementarProduto)
+
+   atualizarValor() 
+};
+
 // BOTAO DECREMENTO  -  Chamada dos objetos via DOM
 const botaoDecrementoProduto = document.querySelectorAll('.menos')
 for(var i = 0; i < botaoDecrementoProduto.length; i++) {
@@ -171,3 +243,9 @@ botaoCep.addEventListener('click', buscaCep)
 // BOTAO FINALIZAR PEDIDO  -  Chamada dos objetos via DOM
 const botaoFinalizarPedido = document.querySelector('#finalizar-pedido')
 botaoFinalizarPedido.addEventListener('click', finalizarPedido)
+
+
+const botaoComprarProduto = document.querySelectorAll('.botao-comprar-produto')
+for(var i = 0; i < botaoComprarProduto.length; i++) {
+  botaoComprarProduto[i].addEventListener('click', adicionarProdutoCarrinho)
+}

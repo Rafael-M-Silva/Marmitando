@@ -114,7 +114,7 @@
                     <h3 class="descricao-produto">Frango em cubos, brócolis e purê de batata</h3>
                     <div class="preco-botao-comprar">
                         <p class="preco-produto">R$16,00</p>
-                        <input class="botao-comprar" type="button" value="Comprar">
+                        <input class="botao-comprar-produto" type="button" value="Comprar">
                     </div>
                 </div>
 
@@ -127,7 +127,7 @@
                     </h3>
                     <div class="preco-botao-comprar">
                         <p class="preco-produto">R$16,00</p>
-                        <input class="botao-comprar" type="button" value="Comprar">
+                        <input class="botao-comprar-produto" type="button" value="Comprar">
                     </div>
                 </div>
 
@@ -140,7 +140,7 @@
                         brócolis)</h3>
                     <div class="preco-botao-comprar">
                         <p class="preco-produto">R$16,00</p>
-                        <input class="botao-comprar" type="button" value="Comprar">
+                        <input class="botao-comprar-produto" type="button" value="Comprar">
                     </div>
                 </div>
 
@@ -152,7 +152,7 @@
                     <h3 class="descricao-produto">Arroz integral ou branco, carne de panela e mix de legumes</h3>
                     <div class="preco-botao-comprar">
                         <p class="preco-produto">R$16,00</p>
-                        <input class="botao-comprar" type="button" value="Comprar">
+                        <input class="botao-comprar-produto" type="button" value="Comprar">
                     </div>
                 </div>
 
@@ -164,7 +164,7 @@
                     <h3 class="descricao-produto">Arroz branco ou integral, filé de frango e cenoura refogada</h3>
                     <div class="preco-botao-comprar">
                         <p class="preco-produto">R$16,00</p>
-                        <input class="botao-comprar" type="button" value="Comprar">
+                        <input class="botao-comprar-produto" type="button" value="Comprar">
                     </div>
                 </div>
 
@@ -197,13 +197,13 @@
                     </div>
                     <div class="descricao">
                       <p class="desconto hidden"><span></span></p>
-                        <h3>Kit 10 marmitas - Almoço & Jantar</h3>
-                        <p>Já imaginou passar 10 dias comendo saudável, com muita variedade e sabor, sem sujar a louça? Aqui, você garante tudo isso!</p>
+                        <h3 class="opcao-produto">Kit 10 marmitas - Almoço e Jantar</h3>
+                        <p class="descricao-produto">Já imaginou passar 10 dias comendo saudável, com muita variedade e sabor, sem sujar a louça? Aqui, você garante tudo isso!</p>
                     </div>
                     <div class="preco-btn">
-                        <p>R$160,00</p>
+                        <p class="preco-produto">R$160,00</p>
                         <p>R$16,00/refeição</p>
-                        <input class="botao-comprar" type="button" value="comprar">
+                        <input class="botao-comprar-produto" type="button" value="comprar">
                     </div>
                 </div>
 
@@ -213,13 +213,14 @@
                     </div>
                     <div class="descricao">
                         <p class="desconto">Desconto<span>R$20,00</span></p>
-                        <h3>Kit 20 marmitas -  Come que Cresce</h3>
-                        <p>Já imaginou passar 20 dias comendo saudável, com muita variedade e sabor, sem sujar a louça? Aqui, você garante tudo isso!</p>
+                        <h3 class="opcao-produto">Kit 20 marmitas -  Come que Cresce</h3>
+                        <p  class="descricao-produto">Já imaginou passar 20 dias comendo saudável, com muita variedade e sabor, sem sujar a louça? Aqui, você garante tudo isso!</p>
                     </div>
                     <div class="preco-btn">
+                        <p class="preco-produto" hidden>R$300,00</p>
                         <p class="preco-antigo">R$16,00</p>
                         <p>R$15,00/refeição</p>
-                        <input class="botao-comprar" type="button" value="comprar">
+                        <input class="botao-comprar-produto" type="button" value="comprar">
                     </div>
                 </div>
 
@@ -228,14 +229,15 @@
                         <img src="./image/marmita-kit-10.jpg" alt="">
                     </div>
                     <div class="descricao">
+                        <p class="preco-produto" hidden>R$435,00</p>
                         <p class="desconto">Desconto<span>R$35,00</span></p>
-                        <h3>Kit 30 marmitas - Vem monstro</h3>
-                        <p>Já imaginou passar 30 dias comendo saudável, com muita variedade e sabor, sem sujar a louça? Aqui, você garante tudo isso!</p>
+                        <h3 class="opcao-produto">Kit 30 marmitas - Vem monstro</h3>
+                        <p  class="descricao-produto">Já imaginou passar 30 dias comendo saudável, com muita variedade e sabor, sem sujar a louça? Aqui, você garante tudo isso!</p>
                     </div>
                     <div class="preco-btn">
                         <p class="preco-antigo">R$16,00</p>
                         <p>R$14,50/refeição</p>
-                        <input class="botao-comprar" type="button" value="comprar">
+                        <input class="botao-comprar-produto" type="button" value="comprar">
                     </div>
                 </div>
             </div>
@@ -388,80 +390,10 @@
                 <h1>Meu carrinho</h1>
             </div>
 
-            <div class="conteudo">
-
-                <!--  <div class="card-produto">
-                    <div class="produto">
-                        <h3>Produto</h3>
-                        <div class="descricao-produto">
-                            <div class="imagem-produto">
-                                <img src="./image/marmita-1.jpg" alt="">
-                            </div>
-                            <div class="descricao">
-                                <span class="opcao-produto">Opção 1:250g</span>
-                                <p class="descricao-produto">Frango em cubos, brócolis e purê de batata</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="preco">
-                        <h3>Preço</h3>
-                        <p class="preco-produto">R$ 16,00</p>
-                    </div>
-                    <div class="quantidade">
-                        <h3>Quantidade</h3>
-                        <div class="form">
-                            <input class="altarar-quantidade-produto mais" type="button" value="+">
-                            <input class="quantidade-produto" type="number" name="quantidade" id="quantidade"value="1" min="1" disabled>
-                            <input class="altarar-quantidade-produto menos" type="button" value="-">
-                        </div>
-                    </div>
-                    <div class="total">
-                        <h3>Total</h3>
-                        <p class="valor-total">R$ 16,00</p>
-                    </div>
-                    <div class="lixeira">
-                        <img class="remover-produto" src="./assets/lixeira.svg" alt="">
-                    </div>
-                </div> 
-
-                 <div class="card-produto">
-                    <div class="produto">
-                        <h3>Produto</h3>
-                        <div class="descricao-produto">
-                            <div class="imagem-produto">
-                                <img src="./image/marmita-2.jpg" alt="">
-                            </div>
-                            <div class="descricao">
-                                <span class="opcao-produto">Opção 2:250g</span>
-                                <p class="descricao-produto">Frango em cubos, brócolis e purê de batata</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="preco">
-                        <h3>Preço</h3>
-                        <p class="preco-produto">R$ 16,00</p>
-                    </div>
-                    <div class="quantidade">
-                        <h3>Quantidade</h3>
-                        <div class="form">
-                            <input class="altarar-quantidade-produto mais" type="button" value="+">
-                            <input class="quantidade-produto" type="number" name="quantidade" id="quantidade"value="2" min="1" disabled>
-                            <input class="altarar-quantidade-produto menos" type="button" value="-">
-                        </div>
-                    </div>
-                    <div class="total">
-                        <h3>Total</h3>
-                        <p class="valor-total">R$ 16,00</p>
-                    </div>
-                    <div class="lixeira">
-                        <img class="remover-produto" src="./assets/lixeira.svg" alt="">
-                    </div>
-                </div>  -->
-
-            </div>
+            <div class="conteudo"></div>
 
             <div class="subtotal">
-                <p>Subtotal: <span>R$ 32,00</span></p>
+                <p>Subtotal: <span>R$ 0,00</span></p>
             </div>
 
             <div class="resumo-cep">
