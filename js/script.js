@@ -94,9 +94,15 @@ const atualizarValor = () => {
   if(subTotal == 0) {
     document.querySelector('.modal-off main .conteudo').innerHTML = `
     <div class="carrinho-vazio">
-      <h1 >Carrinho Vazio!</h1>
+    <img class="carrinho" src="./assets/carrinho.svg" alt="Carrinho de compra">
+      <h1>Carrinho Vazio!</h1>
+      <a href="#kit-marmitas">
+        <button id="continue-comprando" class="botao-comprar"> Continue Comprando </button>
+      </a>
     </div>
     `
+    botaoContinueComprando = document.querySelector('#continue-comprando')
+    botaoContinueComprando.addEventListener('click', modalOn)
   }
 }
 atualizarValor()
