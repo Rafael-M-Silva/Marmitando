@@ -1,3 +1,8 @@
+// global
+const modal = document.querySelector(".modal-off");
+const navbar = document.querySelector(".nav-bar");
+const body = document.querySelector("body");
+
 // Objeto dados Usuario para encaminhar Wpp
 let dadosUsuarioCep = {
   localidade: ``,
@@ -8,14 +13,17 @@ let dadosUsuarioCep = {
 
 // configuração quando o modal estiver ativo
 const modalOn = () => {
-  const modal = document.querySelector(".modal-off");
-  const navbar = document.querySelector(".nav-bar");
-  const body = document.querySelector("body");
-
   navbar.classList.toggle("display-none");
   modal.classList.toggle("modal-on");
   body.classList.toggle("overflow-hidden");
 };
+
+// Fechar modal e voltar para tela inicial
+const fecharModal = () => {
+  navbar.classList.remove("display-none");
+  modal.classList.remove("modal-on");
+  body.classList.remove("overflow-hidden");
+}
 
 // Buscando o cep do usuario e imprimindo na tela
 const buscaCep = () => {
@@ -81,6 +89,7 @@ const finalizarPedido = () => {
 // Atualizando o valor do subtotal e resumo
 const atualizarValor = () => {
   let subTotal = 0;
+  const notificacao = document.querySelector('.notificacao')
   const precoProduto = document.querySelectorAll(
     ".card-produto .preco .preco-produto"
   );
@@ -103,6 +112,7 @@ const atualizarValor = () => {
     .replace(".", ",")}`;
 
   if (subTotal == 0) {
+    notificacao.classList.remove('notificacao-on')
     document.querySelector(".modal-off main .conteudo").innerHTML = `
     <div class="carrinho-vazio">
     <img class="carrinho" src="./assets/carrinho.svg" alt="Carrinho de compra">
@@ -116,10 +126,13 @@ const atualizarValor = () => {
     botaoContinueComprando.addEventListener("click", modalOn);
     return;
   }
+
   const modalCarrinhoVazio = document.querySelector(".carrinho-vazio");
   if (modalCarrinhoVazio) {
     modalCarrinhoVazio.remove();
   }
+  
+  notificacao.classList.add('notificacao-on') /* acionando sino de notificação quando entrar item, subTotal > 1 já add */
 };
 atualizarValor();
 
@@ -166,6 +179,7 @@ const decrementoProduto = (event) => {
   ).innerHTML = `R$ ${total.toFixed(2).replace(".", ",")}`;
   atualizarValor();
 };
+
 
 const adicionarProdutoCarrinho = (event) => {
   const botao = event.target;
@@ -242,6 +256,8 @@ const adicionarProdutoCarrinho = (event) => {
   atualizarValor();
 };
 
+
+
 // BOTAO DECREMENTO  -  Chamada dos objetos via DOM
 const botaoDecrementoProduto = document.querySelectorAll(".menos");
 for (var i = 0; i < botaoDecrementoProduto.length; i++) {
@@ -276,3 +292,12 @@ const botaoComprarProduto = document.querySelectorAll(".botao-comprar-produto");
 for (var i = 0; i < botaoComprarProduto.length; i++) {
   botaoComprarProduto[i].addEventListener("click", adicionarProdutoCarrinho);
 }
+
+// Fechando modal e voltando para Home
+const botaoLogo = document.querySelector('.logo')
+botaoLogo.addEventListener('click', fecharModal)
+
+
+
+
+

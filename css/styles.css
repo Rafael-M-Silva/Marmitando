@@ -65,6 +65,15 @@ header .carrinho-compras {
   z-index: 2000;
 }
 
+.logo {
+  width: 100px;
+  transition: .3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
 header .carrinho-compras img {
     transition: 0.3s;
 }
@@ -82,13 +91,29 @@ header .carrinho-compras .notificacao {
   font-size: 12px;
   padding: 5px;
   position: absolute;
-  background-color: var(--txOrange);
+  background-color: var(--txGray);
   font-weight: 600;
   border-radius: 100px;
   right: 0px;
   bottom: 5px;
   color: var(--txWhite);
 }
+
+header .carrinho-compras .notificacao-on {
+  background: var(--txOrange);
+  transition: .3s;
+  animation: notificacao .1s infinite alternate-reverse;
+}
+
+@keyframes notificacao {
+  0% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(-6deg);
+  }
+}
+
 /* ========================== FIM HEADER ======================= */
 
 /* ===================== INICIO SECTION GLOBAL ==================== */
@@ -111,7 +136,8 @@ body::-webkit-scrollbar {
 }
 
 .verde {
-  background: url(../image/background.png), var(--bgGeen);
+  background: url(../image/bg.png), var(--bgGeen);
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -218,7 +244,7 @@ section .conteudo {
 .nosso-cardapio .conteudo .cardapio-opcao .opcao h2 {
   width: 187px;
   text-align: center;
-  background-image: url(../image/opcoesfundo.png);
+  background-image: url(../assets/opcoesfundo.svg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -279,7 +305,7 @@ section .conteudo {
   height: 250px;
   border-radius: 20px 20px 0px 0px;
   object-fit: cover;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s linear;
 }
 
 .kit-marmitas .conteudo .produto:hover img {
@@ -432,6 +458,11 @@ section .conteudo {
   padding-left: 15px;
 }
 
+.como-montar .conteudo .dicas li span {
+  color: var(--txOrange);
+  font-weight: 600;
+}
+
 .como-montar .conteudo .dicas ul li {
   list-style: disc;
 }
@@ -529,7 +560,7 @@ footer .logo {
 footer .conteudo {
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 20px;
 }
 
 footer .conteudo .info {
@@ -537,6 +568,11 @@ footer .conteudo .info {
   padding-right: 150px;
   padding-left: 20px;
   text-align: start;
+}
+
+footer .conteudo .info ul li a {
+  color: var(--txWhite);
+  text-decoration: underline;
 }
 
 footer .conteudo .info:nth-last-child(1) {
@@ -553,18 +589,33 @@ footer .copy {
 /* FIM FOOTER */
 
 /* WPP - VOLTAR - MODAL */
-.btn-scroll-header a {
+.btn-wpp a {
   background: var(--txOrange);
-  padding: 10px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 100%;
+  box-shadow: -2px 10px 10px var(--txGrayBlack);
   position: fixed;
-  right: 10px;
-  bottom: 10px;
+  right: 15px;
+  bottom: 15px;
+  font-size: 40px;
   color: var(--bgWhite);
+  animation: animate-wpp infinite alternate-reverse 1s;
+  z-index: 2000;
+}
+
+@keyframes animate-wpp {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: -2px 10px 10px var(--txGrayBlack);
+  }
 }
 
 .modal-off {
-  margin-top: 127px;
+  margin-top: 107.5px;
   display: none;
   position: absolute;
   top: 0;
@@ -885,5 +936,4 @@ footer .copy {
   font-size: 24px;
   padding: 8px 20px;
 }
-
 /* WPP - VOLTAR - MODAL */
