@@ -126,7 +126,7 @@ const finalizarPedido = () => {
       Volte sempre :)
     `;
 
-    const numeroWhatsApp = '11984481182';
+    const numeroWhatsApp = '5511984481182';
     const mensagemCodificada = encodeURIComponent(mensagemWhatsapp);
 
     // Construir o link do WhatsApp
