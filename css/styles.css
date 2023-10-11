@@ -19,6 +19,16 @@
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
+  
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--txOrange);   
+  border-radius: 20px;
 }
 
 /* ====================== INICIO HEADER ======================= */
@@ -149,14 +159,7 @@ header .abrir-menu ul{
 /* ========================== FIM HEADER ======================= */
 
 /* ===================== INICIO SECTION GLOBAL ==================== */
-body::-webkit-scrollbar {
-    width: 6px;
-}
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: var(--txOrange);   
-    border-radius: 20px;
-}
+
 
 .modal-off::-webkit-scrollbar {
     width: 6px;
@@ -719,8 +722,9 @@ footer .copy {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 10px;
 }
+
 
 .modal-off .conteudo h3 {
   color: var(--txBlackLight);
@@ -734,6 +738,7 @@ footer .copy {
 .modal-off .conteudo .card-produto .produto .descricao-produto {
   display: flex;
   gap: 6px;
+  
 }
 
 .modal-off
@@ -773,7 +778,7 @@ footer .copy {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
+  height: 93px;
   color: var(--txGrayBlack);
   font-size: 16px;
   font-weight: 300;
@@ -783,7 +788,7 @@ footer .copy {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
+  height: 93px;
   gap: 5px;
 }
 
@@ -811,9 +816,6 @@ footer .copy {
 .modal-off .card-produto .quantidade .form .quantidade-produto {
   width: 50px;
   height: 20px;
-  padding: 6px;
-  padding-right: 0;
-  padding-left: 10px;
   gap: 10px;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -824,15 +826,22 @@ footer .copy {
   text-align: center;
 }
 
+
 .modal-off .card-produto .total {
-  gap: 45px;
+  gap: 10px;
   font-weight: 600;
   color: var(--txBlackLight);
   font-weight: 600;
 }
 
+.modal-off .card-produto .total .valor-total {
+  display: flex;
+  align-items: center;
+  height: 93px;
+}
+
 .modal-off .card-produto .lixeira {
-  padding-top: 30px;
+  padding-top: 20px;
   display: flex;
   align-items: center;
 }
@@ -988,6 +997,29 @@ footer .copy {
   header .menu {
     display: block;
   }
+
+  .modal-off .resumo-cep .resumo{
+    margin: auto;
+  }
+
+  .modal-off main .card-produto .produto .descricao-produto p{
+    height: 50px;
+    overflow-y: scroll;
+  }
+
+  .modal-off main .resumo-cep div{
+    width: 100%;
+  }
+
+  .modal-off main .resumo-cep div p, input{
+    width: 100%;
+    margin: auto;
+  }
+
+  .modal-off main .resumo-cep .cep .input-style, .modal-off main .resumo div .botao-comprar {
+    width: 100%;
+    
+  }
 }
 
 @media screen and (max-width:1025px) {
@@ -1051,6 +1083,10 @@ footer .copy {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+  }
+
+  .modal-off main {
+    padding: 40px 5%;
   }
 
   
@@ -1128,9 +1164,6 @@ footer .copy {
     padding-top: 240px;
   }
 
-
-
-  
 }
 
 @media screen and (max-width:745px) {
@@ -1142,6 +1175,9 @@ footer .copy {
     width: 100%;
   }
 
+  .modal-off .carrinho-vazio h1{
+    font-size: 36px;
+  }
 }
 
 @media screen and (max-width:500px) {
@@ -1169,21 +1205,45 @@ footer .copy {
     font-size: 26px;
   }
 
+  .modal-off {
+    top: -16px;
+  }
+
+  .modal-off main .subtotal {
+    height: 59px;
+  }
+
 }
 
-@media screen and (max-width:380px) {
+@media screen and (max-width:400px) {
   header {
     padding: 5px 5%;
   }
   section .conteudo {
     padding: 0px 5%;
   }
-    section .titulo{
+
+  section .titulo{
       padding: 0px 5%;
       padding-top: 50px;
-    }
+  }
+  .modal-off main .resumo-cep .cep .input-style {
+    padding: 12px 20px;
+  }
     
 }
+
+@media screen and (max-width:380px) {
+  
+  .modal-off .carrinho-vazio h1{
+    font-size: 24px;
+  }
+
+  .modal-off .carrinho-vazio .botao-comprar {
+    font-size: 20px;
+  }
+}
+
 
 @media screen and (max-width:340px) {
   .ofertas .conteudo .oferta{
@@ -1194,6 +1254,9 @@ footer .copy {
     font-size: 14px;
   }
 
+  .modal-off .carrinho-vazio .botao-comprar {
+    font-size: 14px;
+  }
   
 }
 
