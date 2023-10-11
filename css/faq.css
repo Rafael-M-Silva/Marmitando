@@ -19,6 +19,16 @@ main h5 {
 }
 
 
+footer .conteudo .info h3{
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+footer .conteudo .info ul {
+  padding-left: 0;
+}
+
+
 /* INICIO FOOTER */
 footer {
   text-align: center;
