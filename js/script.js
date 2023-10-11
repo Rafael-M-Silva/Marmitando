@@ -224,7 +224,7 @@ const adicionarProdutoCarrinho = (event) => {
     <p class="preco-produto">${precoProduto}</p>
   </div>
   <div class="quantidade">
-    <h3>Quantidade</h3>
+    <h3>Qtd</h3>
     <div class="form">
         <input class="altarar-quantidade-produto mais" type="button" value="+">
         <input class="quantidade-produto" type="number" name="quantidade" value="1" disabled>
@@ -269,11 +269,6 @@ const abrindoMenu = (event) => {
   })
 }
 
-
-
-
-
-
 // BOTAO DECREMENTO  -  Chamada dos objetos via DOM
 const botaoDecrementoProduto = document.querySelectorAll(".menos");
 for (var i = 0; i < botaoDecrementoProduto.length; i++) {
@@ -317,5 +312,4 @@ botaoLogo.addEventListener('click', fecharModal)
 // abrindo menu
 const menu = document.querySelector('.menu')
 menu.addEventListener('click', abrindoMenu)
-
 
