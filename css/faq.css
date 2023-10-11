@@ -18,6 +18,8 @@ main h5 {
   margin-top: 40px;
 }
 
+
+/* INICIO FOOTER */
 footer {
   text-align: center;
 }
@@ -58,3 +60,4 @@ footer .copy {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   margin-top: 20px;
 }
+/* FIM */
