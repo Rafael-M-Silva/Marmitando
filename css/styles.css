@@ -114,6 +114,15 @@ header .carrinho-compras .notificacao-on {
   }
 }
 
+header .menu{
+  cursor: pointer;
+}
+
+header .menu i {
+  font-size: 34px;
+  color: var(--bgGeen);
+}
+
 /* ========================== FIM HEADER ======================= */
 
 /* ===================== INICIO SECTION GLOBAL ==================== */
@@ -224,6 +233,10 @@ section .conteudo {
 .branco .titulo h1::after,
 .branco .titulo h1::before {
   background: rgba(241, 143, 72, 0.5);
+}
+
+.hidden {
+  display: none;
 }
 /* ===================== FIM SECTION GLOBAL ==================== */
 
@@ -937,3 +950,223 @@ footer .copy {
   padding: 8px 20px;
 }
 /* WPP - VOLTAR - MODAL */
+
+
+
+/* Midia queries */
+
+
+
+@media screen and (max-width:1110px) {
+  header nav {
+    display: none;
+  }
+
+  header .menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width:1025px) {
+  section .titulo h1::after,
+  section .titulo h1::before {
+    width: 0px;
+  }
+
+  section .titulo h1::after {
+    right: 0px;
+  }
+
+  section .titulo h1::before {
+    left: 0px;
+  }
+
+
+   .nosso-cardapio {
+    position: relative;
+  }
+  .nosso-cardapio .conteudo .imagem-marmitando, .imagem-marmitando img{
+    width: 100%;
+  }
+
+  .ofertas .conteudo {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ofertas .conteudo .oferta {
+    text-align: center;
+    width: 400px;
+    flex-direction: column;
+  }
+
+  .ofertas .conteudo .oferta .imagem img {
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .ofertas .conteudo .oferta .descricao {
+    padding: 0;
+    align-items: center;
+  }
+
+  .ofertas .conteudo .oferta .preco-btn {
+    margin: 0;
+    /* margin-bottom: 20px; */
+  }
+
+  .ofertas .conteudo .oferta .preco-btn input {
+    border-radius: 0 0 6px 6px;
+    padding: 16px;
+  }
+
+  .como-montar .conteudo  {
+    display: block;
+  }
+
+  .como-montar .conteudo .video {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+}
+
+@media screen and (max-width:930px) {
+  footer {
+    padding: 0 16%;
+  }
+  footer .conteudo {
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer .conteudo .info{
+    padding: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #f1f1f113;
+  }
+
+
+  footer .conteudo .info:nth-child(3) {
+    border-bottom: none;
+  }
+
+  footer .conteudo .info ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:900px) {
+  header {
+    padding: 5px 10%;
+  }
+  section .conteudo {
+    padding: 0px 10%;
+  }
+    section .titulo{
+      padding: 0px 10%;
+      padding-top: 50px;
+    }
+
+  .nosso-cardapio .conteudo{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nosso-cardapio .conteudo .cardapio-opcao {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nosso-cardapio .conteudo .cardapio-opcao .opcao ul li {
+    width: 150px;
+  }
+
+  .nosso-cardapio .conteudo .imagem-marmitando {
+    text-align: center;
+  }
+
+  .nosso-cardapio .conteudo .imagem-marmitando img {
+    width: 205px;
+    position: absolute;
+    bottom: -250px;
+    transform: translate(-50%);
+  }
+
+  .kit-marmitas {
+    padding-top: 240px;
+  }
+
+
+
+  
+}
+
+@media screen and (max-width:745px) {
+  .como-funciona-nossa-experiencia .conteudo .experiencia, .sobre .conteudo .falas{
+    width: 400px;
+  }
+
+  .como-funciona-nossa-experiencia .conteudo .experiencia p, .sobre .conteudo .falas p{
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width:500px) {
+  header .logo{
+    width: 80px;
+  }
+
+  section .titulo h1 {
+    font-size: 24px;
+  }
+
+  section .titulo p {
+    font-size: 14px;
+  }
+
+  .ofertas .conteudo .oferta{
+    width: 300px;
+  }
+
+  section .conteudo p, li {
+    font-size: 14px;
+  }
+
+
+}
+
+@media screen and (max-width:380px) {
+  header {
+    padding: 5px 5%;
+  }
+  section .conteudo {
+    padding: 0px 5%;
+  }
+    section .titulo{
+      padding: 0px 5%;
+      padding-top: 50px;
+    }
+}
+
+@media screen and (max-width:340px) {
+  .ofertas .conteudo .oferta{
+    width: 250px;
+  }
+
+  .sobre .conteudo .falas p {
+    font-size: 14px;
+  }
+}
+
+
+
+
