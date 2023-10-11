@@ -17,3 +17,12 @@ main h5 {
   text-align: center;
   margin-top: 40px;
 }
+
+footer .conteudo .info h3{
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+footer .conteudo .info ul {
+  padding-left: 0;
+}
