@@ -116,12 +116,35 @@ header .carrinho-compras .notificacao-on {
 
 header .menu{
   cursor: pointer;
+  display: none;
+  z-index: 3000;
 }
 
 header .menu i {
   font-size: 34px;
   color: var(--bgGeen);
 }
+
+header .abrir-menu {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bgWhite);
+  z-index: 2500;
+}
+
+header .abrir-menu ul{
+  flex-direction: column;
+  gap: 50px;
+  font-size: 36px;
+}
+
 
 /* ========================== FIM HEADER ======================= */
 
@@ -1030,6 +1053,7 @@ footer .copy {
     margin-top: 20px;
   }
 
+  
 }
 
 @media screen and (max-width:930px) {
@@ -1140,7 +1164,10 @@ footer .copy {
   section .conteudo p, li {
     font-size: 14px;
   }
-
+ 
+  header .abrir-menu ul li{
+    font-size: 26px;
+  }
 
 }
 
@@ -1155,6 +1182,7 @@ footer .copy {
       padding: 0px 5%;
       padding-top: 50px;
     }
+    
 }
 
 @media screen and (max-width:340px) {
@@ -1165,6 +1193,8 @@ footer .copy {
   .sobre .conteudo .falas p {
     font-size: 14px;
   }
+
+  
 }
 
 

@@ -256,6 +256,22 @@ const adicionarProdutoCarrinho = (event) => {
   atualizarValor();
 };
 
+// abrindo e fechando menu
+const abrindoMenu = (event) => {
+  const botaoMenu = event.target
+  const navbar = document.querySelector('.nav-bar')
+  botaoMenu.classList.toggle('fa-x')
+  navbar.classList.toggle('abrir-menu')
+
+  window.addEventListener('scroll', ()=> {
+    botaoMenu.classList.remove('fa-x')
+    navbar.classList.remove('abrir-menu')
+  })
+}
+
+
+
+
 
 
 // BOTAO DECREMENTO  -  Chamada dos objetos via DOM
@@ -298,6 +314,8 @@ const botaoLogo = document.querySelector('.logo')
 botaoLogo.addEventListener('click', fecharModal)
 
 
-
+// abrindo menu
+const menu = document.querySelector('.menu')
+menu.addEventListener('click', abrindoMenu)
 
 
