@@ -2,6 +2,8 @@
 const modal = document.querySelector(".modal-off");
 const navbar = document.querySelector(".nav-bar");
 const body = document.querySelector("body");
+let valorCompra = 0
+const frete = 5
 
 // Objeto dados Usuario para encaminhar Wpp
 let dadosUsuarioCep = {
@@ -9,6 +11,7 @@ let dadosUsuarioCep = {
   bairro: ``,
   logradouro: ``,
   numero: ``,
+  complemento: ``
 };
 
 // configuração quando o modal estiver ativo
@@ -51,11 +54,17 @@ const buscaCep = () => {
         <p class="cidade">${localidade}</p>
         <p class="bairro">${bairro}</p>
         <p class="rua">${logradouro} <span class="numero"><input class='input-style pequeno' placeholder="Nº" type="number" id="numero"></span></p>
+        <textarea name="" id="complemento" cols="30" rows="4" placeholder="Complemento"></textarea>
       `;
 
       document
         .querySelector("#numero")
         .addEventListener("input", pegarNumeroCasa);
+
+        document
+        .querySelector('#complemento')
+        .addEventListener('input', pegarComplemento)
+
     })
     .catch((error) => {
       console.error(error);
@@ -68,23 +77,66 @@ const pegarNumeroCasa = (event) => {
   dadosUsuarioCep.numero = event.target.value;
 };
 
-// Finalizando o pedido imprimindo um alert e falta encaminhar para o wpp
-const finalizarPedido = () => {
-  if (dadosUsuarioCep.numero == 0) {
-    alert("Preencha o número da sua residencia!");
-    return;
-  }
-  alert(`
-  Pedido Finalizado com Sucesso!
-  =========================================
-  Cidade: ${dadosUsuarioCep.localidade}
-  bairro: ${dadosUsuarioCep.bairro}
-  rua: ${dadosUsuarioCep.logradouro} n: ${dadosUsuarioCep.numero}
-  =========================================
-
-  Volte sempre :)
-  `);
+// pegando o complemento da casa do usuario e passando esse valor para o objeto dadosUsuarioCep
+const pegarComplemento = (event) => {
+  dadosUsuarioCep.complemento = event.target.value;
 };
+
+
+// Finalizando o pedido imprimindo um alert e falta encaminhar para o wpp
+let marmitas = []
+let quantidades = []
+const finalizarPedido = () => {
+  let totalCompra = valorCompra + frete;
+  
+  if (dadosUsuarioCep.numero == 0) {
+    alert("Preencha todos os campos!");
+  } else if (valorCompra == 0) {
+    alert("Nenhum item no carrinho");
+  } else {
+    const pegandoMarmitas = document.querySelectorAll('.card-produto')
+    for(var i = 0; i < pegandoMarmitas.length; i++) {
+      const marmita = pegandoMarmitas[i].querySelector('.opcao-produto').innerHTML
+      const quantidade = pegandoMarmitas[i].querySelector('.quantidade-produto').value
+      quantidades.push(quantidade)
+      marmitas.push(marmita)
+    }
+    
+    // Crie um array que combina marmitas e quantidades
+    const marmitasComQuantidades = []
+    for (let i = 0; i < marmitas.length; i++) {
+      marmitasComQuantidades.push(`${marmitas[i]} x ${quantidades[i]}`)
+    }
+
+    const marmitasFormatadas = marmitasComQuantidades.join('\n');
+    const mensagemWhatsapp = `
+      *Pedido Finalizado com Sucesso!*
+      =========================================
+      _Cidade:_ ${dadosUsuarioCep.localidade}
+      _Bairro:_ ${dadosUsuarioCep.bairro}
+      _Rua:_ ${dadosUsuarioCep.logradouro} n: ${dadosUsuarioCep.numero}
+      _Complemento:_ ${dadosUsuarioCep.complemento}
+      =========================================
+      *Marmitas selecionadas*
+
+      ${marmitasFormatadas}
+
+      Total da compra: *R$${totalCompra.toFixed(2).replace('.', ',')}*
+  
+      Volte sempre :)
+    `;
+
+    const numeroWhatsApp = '11984481182';
+    const mensagemCodificada = encodeURIComponent(mensagemWhatsapp);
+
+    // Construir o link do WhatsApp
+    const linkWhatsapp = `https://wa.me//${numeroWhatsApp}?text=${mensagemCodificada}`;
+    // Redirecionar para o link do WhatsApp
+    window.location.href = linkWhatsapp;
+  }
+};
+
+
 
 // Atualizando o valor do subtotal e resumo
 const atualizarValor = () => {
@@ -102,6 +154,7 @@ const atualizarValor = () => {
     ).value;
 
     subTotal += preco * quantidade;
+    valorCompra = subTotal
   }
 
   document.querySelector(".subtotal span").innerHTML = `R$ ${subTotal
@@ -110,6 +163,7 @@ const atualizarValor = () => {
   document.querySelector(".valor-produtos span").innerHTML = `R$ ${subTotal
     .toFixed(2)
     .replace(".", ",")}`;
+  document.querySelector('.total-compra span').innerHTML = `R$ ${(subTotal + frete).toFixed(2).replace('.',',')}`
 
   if (subTotal == 0) {
     notificacao.classList.remove('notificacao-on')
@@ -124,6 +178,7 @@ const atualizarValor = () => {
     `;
     botaoContinueComprando = document.querySelector("#continue-comprando");
     botaoContinueComprando.addEventListener("click", modalOn);
+    
     return;
   }
 
@@ -134,7 +189,7 @@ const atualizarValor = () => {
   
   notificacao.classList.add('notificacao-on') /* acionando sino de notificação quando entrar item, subTotal > 1 já add */
 };
-atualizarValor();
+
 
 // Removendo produto e atualizando o valor
 const removerProduto = (event) => {
@@ -255,6 +310,7 @@ const adicionarProdutoCarrinho = (event) => {
 
   atualizarValor();
 };
+
 
 // abrindo e fechando menu
 const abrindoMenu = (event) => {

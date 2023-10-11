@@ -264,6 +264,15 @@ section .conteudo {
 .hidden {
   display: none;
 }
+
+textarea {
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px;
+  font-size: 20px;
+  resize: none;
+}
 /* ===================== FIM SECTION GLOBAL ==================== */
 
 /* ==================== INICIO SECTION NOSSO CARDAPIO ================= */
