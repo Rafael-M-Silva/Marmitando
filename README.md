@@ -2,7 +2,7 @@
 
 "O Marmitando é uma plataforma de pedidos online que simplifica a compra de marmitas, permitindo aos usuários navegar no cardápio, selecionar refeições e concluir a compra com integração direta ao WhatsApp."
 
-(./github/marmitando.png)
+<img src="./github/marmitando.png">
 
 ## Contribuidores
 
