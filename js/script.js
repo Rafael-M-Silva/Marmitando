@@ -237,6 +237,21 @@ const decrementoProduto = (event) => {
 
 
 const adicionarProdutoCarrinho = (event) => {
+  const popUpOn = document.querySelector('.pop-up-on')
+  let popUp = document.createElement('div')
+  popUp.classList.add('alert')
+  popUp.classList.add('pop-up')
+
+  popUp.innerHTML = `
+    <img src="./assets/check.svg" alt="">
+    <p>Item Adicionado com Sucesso!</p>
+  `
+  popUpOn.appendChild(popUp)
+
+  setTimeout(() => {
+    popUp.classList.remove('pop-up')
+  }, 200);
+
   const botao = event.target;
   const produtoInfo = botao.parentElement.parentElement;
   const tituloNovoProduto =
