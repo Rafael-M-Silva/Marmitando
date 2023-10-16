@@ -248,9 +248,13 @@ const adicionarProdutoCarrinho = (event) => {
   `
   popUpOn.appendChild(popUp)
 
-  setTimeout(() => {
+    setTimeout(() => {
     popUp.classList.remove('pop-up')
-  }, 200);
+
+    setInterval(() => {
+      popUp.remove()
+    }, 2000);
+  }, 300);
 
   const botao = event.target;
   const produtoInfo = botao.parentElement.parentElement;
