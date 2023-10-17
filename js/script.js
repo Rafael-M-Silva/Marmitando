@@ -154,8 +154,8 @@ const atualizarValor = () => {
     ).value;
 
     subTotal += preco * quantidade;
-    valorCompra = subTotal
   }
+  valorCompra = subTotal
 
   document.querySelector(".subtotal span").innerHTML = `R$ ${subTotal
     .toFixed(2)
@@ -188,8 +188,8 @@ const atualizarValor = () => {
   }
   
   notificacao.classList.add('notificacao-on') /* acionando sino de notificação quando entrar item, subTotal > 1 já add */
+  console.log(subTotal);
 };
-
 
 // Removendo produto e atualizando o valor
 const removerProduto = (event) => {
@@ -235,8 +235,7 @@ const decrementoProduto = (event) => {
   atualizarValor();
 };
 
-
-const adicionarProdutoCarrinho = (event) => {
+const alertaPopUp = () => {
   const popUpOn = document.querySelector('.pop-up-on')
   let popUp = document.createElement('div')
   popUp.classList.add('alert')
@@ -250,11 +249,15 @@ const adicionarProdutoCarrinho = (event) => {
 
     setTimeout(() => {
     popUp.classList.remove('pop-up')
-
     setInterval(() => {
       popUp.remove()
+      
     }, 2000);
-  }, 300);
+  }, 1000);
+}
+
+const adicionarProdutoCarrinho = (event) => {
+  alertaPopUp()
 
   const botao = event.target;
   const produtoInfo = botao.parentElement.parentElement;
