@@ -154,8 +154,8 @@ const atualizarValor = () => {
     ).value;
 
     subTotal += preco * quantidade;
-    valorCompra = subTotal
   }
+  valorCompra = subTotal
 
   document.querySelector(".subtotal span").innerHTML = `R$ ${subTotal
     .toFixed(2)
@@ -188,8 +188,8 @@ const atualizarValor = () => {
   }
   
   notificacao.classList.add('notificacao-on') /* acionando sino de notificação quando entrar item, subTotal > 1 já add */
+  console.log(subTotal);
 };
-
 
 // Removendo produto e atualizando o valor
 const removerProduto = (event) => {
@@ -253,7 +253,7 @@ const alertaPopUp = () => {
       popUp.remove()
       
     }, 2000);
-  }, 300);
+  }, 1000);
 }
 
 const adicionarProdutoCarrinho = (event) => {
