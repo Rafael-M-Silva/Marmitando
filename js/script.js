@@ -247,7 +247,7 @@ const alertaPopUp = () => {
   `
   popUpOn.appendChild(popUp)
 
-  setTimeout(() => {
+    setTimeout(() => {
     popUp.classList.remove('pop-up')
     setInterval(() => {
       popUp.remove()
